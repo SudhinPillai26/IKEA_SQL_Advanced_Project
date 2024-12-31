@@ -454,7 +454,7 @@ All SQL queries developed for this project are available in the `queries.sql` fi
    - Populate tables with sample data using `data.sql`.
 
 3. **Execute Queries**:
-   - Open `queries.sql` and execute the queries for analysis.
+   - Open `IKEA_Analysis.sql` and execute the queries for analysis.
 
 ---
 
