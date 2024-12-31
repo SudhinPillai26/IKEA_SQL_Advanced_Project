@@ -77,7 +77,44 @@ This project tackles the following business problems:
 5. Retrieve sales data for the last 6 months.
 
 ### Medium to Hard-Level Queries
-1. Determine the product category contributing the most to revenue.
+1. Identify the stores with decreasing revenue compared to last year, return the stores with highest decrease ratio, considering current year as 2023 and last year as 2022.
+```SQL
+WITH last_year_sales
+AS
+(select 
+	st.store_id,
+	st.store_name,
+	ROUND(sum(s.net_sale)::numeric, 2) as total_sale_2022
+FROM stores as st
+INNER JOIN sales as s
+ON st.store_id = s.store_id
+Where EXTRACT(YEAR FROM s.order_date) = 2022
+GROUP BY 1,2),
+
+curr_year_sales
+AS
+(select 
+	st.store_id,
+	st.store_name,
+	ROUND(sum(s.net_sale)::numeric, 2) as total_sale_2023
+FROM stores as st
+INNER JOIN sales as s
+ON st.store_id = s.store_id
+Where EXTRACT(YEAR FROM s.order_date) = 2023
+GROUP BY 1,2)
+
+Select 
+	ls.store_id,
+	ls.store_name,
+	ls.total_sale_2022,
+	cs.total_sale_2023,
+	ROUND(((ls.total_sale_2022 - cs.total_sale_2023):: numeric/ ls.total_sale_2022 * 100)::numeric, 2) as sales_decrease
+FROM last_year_sales as ls
+INNER JOIN curr_year_sales as cs
+ON ls.store_id = cs.store_id
+WHERE ls.total_sale_2022 > cs.total_sale_2023
+ORDER BY sales_decrease DESC;
+```
 2. Identify stores that need inventory replenishment for specific products.
 3. Analyze monthly sales trends for each store over the past year.
 4. Calculate the impact of discounts on total sales revenue.
