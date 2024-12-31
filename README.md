@@ -475,7 +475,7 @@ Feel free to reach out with questions or suggestions. Here's an example query fo
 
 Here’s the ERD for the IKEA Retail Sales SQL Project:
 
-![ERD_Ikea](https://github.com/user-attachments/assets/916d7575-9fe2-4f7e-810d-a0e6cfb35832)
+![ERD](https://github.com/user-attachments/assets/2e7f6684-2927-49ff-8871-98152ed4ff2f)
 
 
 ---
