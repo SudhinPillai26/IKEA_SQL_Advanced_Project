@@ -1,6 +1,6 @@
 # IKEA Retail Sales SQL Project
 
-![Project Banner Placeholder](https://e7.pngegg.com/pngimages/584/419/png-clipart-ikea-logo-brand-furniture-dublin-others-blue-text.png)
+![Project Banner Placeholder](https://static.dezeen.com/uploads/2019/04/ikea-logo-new-hero-1-1704x958.jpg)
 
 Welcome to the **IKEA Retail Sales SQL Project**! This project leverages a detailed dataset of millions of sales records, product inventory, and store information across IKEA's global operations. The analysis focuses on uncovering sales trends, product performance, and inventory management insights to assist in data-driven decision-making.
 
